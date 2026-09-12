@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Securtiy Permits-South Region</title>
+
+  <style>
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      min-height:100vh;
+      font-family: system-ui,-apple-system,"Segoe UI",Arial;
+      color:#fff;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:28px 16px;
+
+      background:
+        radial-gradient(1200px 650px at 42% 34%, #0a2b3e 0%, #071626 35%, #050b14 70%, #04070c 100%);
+    }
+
+    .panel{
+      width:min(500px, 100%);
+    }
+
+    .card{
+      border-radius:26px;
+      padding: 28px;
+      background: rgba(8,16,24,.7);
+      border: 1px solid rgba(255,255,255,.08);
+      box-shadow: 0 20px 60px rgba(0,0,0,.6);
+      backdrop-filter: blur(16px);
+    }
+
+    /* 🔥 اللوغو بالنص */
+    .logo{
+      display:flex;
+      justify-content:center;
+      margin-bottom:15px;
+    }
+    .logo img{
+      width:80px;
+      height:80px;
+      border-radius:20px;
+    }
+
+    h1{
+      text-align:center;
+      font-size:28px;
+      font-weight:800;
+      margin:10px 0;
+    }
+
+    .subtitle{
+      text-align:center;
+      font-size:14px;
+      color: rgba(255,255,255,.7);
+      margin-bottom:20px;
+    }
+
+    /* 🔥 عمود واحد مثل اليمين */
+    .grid{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+
+    .box{
+      border-radius:14px;
+      padding:14px;
+      background: rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.1);
+    }
+
+    .label{
+      font-size:13px;
+      color: rgba(255,255,255,.6);
+      margin-bottom:5px;
+    }
+
+    .value{
+      font-size:20px;
+      font-weight:bold;
+    }
+
+    .btn{
+      display:block;
+      width:100%;
+      text-align:center;
+      padding:15px;
+      border-radius:14px;
+      text-decoration:none;
+      font-weight:bold;
+      margin-top:15px;
+      color:#021019;
+      background: linear-gradient(90deg, #16d5b6 0%, #1aa6ff 100%);
+    }
+
+    .foot{
+      text-align:center;
+      margin-top:10px;
+      font-size:12px;
+      color: rgba(255,255,255,.5);
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="panel">
+    <div class="card">
+
+      <!-- 🔥 اللوغو بالنص -->
+      <div class="logo">
+        <img src="logo.webp" alt="logo">
+      </div>
+
+      <h1>تصريح جاهز للتنزيل</h1>
+
+      <div class="subtitle">
+        استخدم الزر أدناه لتنزيل نسخة PDF الرسمية للتصريح.
+      </div>
+
+      <!-- 🔥 الترتيب الجديد -->
+      <div class="grid">
+
+        <div class="box">
+          <div class="label">رقم التصريح</div>
+          <div class="value" id="permitNo">—</div>
+        </div>
+
+        <div class="box">
+          <div class="label">الشركة</div>
+          <div class="value" id="company">—</div>
+        </div>
+
+        <div class="box">
+          <div class="label">تاريخ الإصدار</div>
+          <div class="value" id="issueDate">—</div>
+        </div>
+
+        <div class="box">
+          <div class="label">تاريخ الانتهاء</div>
+          <div class="value" id="expireDate">—</div>
+        </div>
+
+      </div>
+
+      <a class="btn" id="downloadBtn" href="#" download>
+        اضغط لتنزيل التصريح (PDF)
+      </a>
+
+      <div class="foot">
+        سيبدأ التنزيل مباشرة
+      </div>
+
+    </div>
+  </div>
+
+<script>
+  const file   = "document.pdf";
+  const permit = "12755";
+  const company= "ملاك الفرح";
+  const issue  = "2026/09/10";
+  const expire = "2027/03/09";
+
+  document.getElementById("permitNo").textContent  = permit;
+  document.getElementById("company").textContent   = company;
+  document.getElementById("issueDate").textContent = issue;
+  document.getElementById("expireDate").textContent= expire;
+
+  document.getElementById("downloadBtn").href = file;
+</script>
+
+</body>
+</html>
